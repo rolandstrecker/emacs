@@ -1,0 +1,39 @@
+/**
+ * @file
+ * @author Roland Strecker
+ *
+ * Add your copyright text here
+ *****************************************************************************/
+#ifndef @@@_H_
+#define @@@_H_
+
+namespace X
+{
+namespace Y
+{
+namespace Z
+{
+/**
+ *
+ *******************************/
+class |||
+{
+public:
+    |||();
+    virtual ~|||();
+
+private:  // methods
+
+private:  // declared methods
+    /** Declared copy constructor. */
+    |||(const |||&);
+    /** Declared operator=. */
+    |||& operator= (const |||&);
+
+private:  // attributes
+};
+}  // end of namespace Z
+}  // end of namespace Y
+}  // end of namespace X
+
+#endif  // @@@_H_

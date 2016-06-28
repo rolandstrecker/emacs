@@ -1,0 +1,80 @@
+#
+# @file
+# @author Roland Strecker
+#
+# Add your copyright text here.
+# #############################################################################
+
+import unittest
+import sys
+from TestOperator import *
+
+if __name__ == "__main__":
+    jarPath = "".join((sys.path[0], r"\..\..\resources"))
+    sys.path += [jarPath]
+
+    jarPath = "".join((sys.path[0], r"\..\..\common"))
+    sys.path += [jarPath]
+else:
+    jarPath = "".join((sys.path[0], r"\..\resources"))
+    sys.path += [jarPath]
+
+    jarPath = "".join((sys.path[0], r"\..\common"))
+    sys.path += [jarPath]
+
+from misc import *
+from common import *
+
+
+# #############################################################################
+# The class
+# #############################################################################
+class tg_non_icao_auth(unittest.TestCase):
+
+    # #########################################################################
+    # setUp/tearDown functions
+    # #########################################################################
+    def setUp(self):
+        """ setUp
+        """
+        # create instance to server
+        Misc.cleanupEnvironment()
+        xmlFile = "".join((Misc.defaultXmlPath, r"\bec.xml"))
+        args = "";
+        self._bec = Misc.setupOperator(xmlFile, args=args,
+                                       tcName=self._testMethodName)
+        # prepare
+        pass
+
+    def tearDown(self):
+        self._bec.teardown()
+        pass
+
+    # #########################################################################
+    # test functions
+    # #########################################################################
+    def testTgXXXXTC0001__00(self):
+        """ testTgXXXXTC0001
+        """
+        pass
+
+
+# #############################################################################
+# private functions
+# #############################################################################
+
+
+# #############################################################################
+# the main functions
+# #############################################################################
+def executeTest():
+    print
+    "\n######################################################################"
+    print "Run tg_non_icao_auth Testcases ...\n"
+    Misc.executeTest(tg_non_icao_auth)
+    pass
+
+if __name__ == "__main__":
+    Misc.udateDefaultPath(r"\..")
+    Misc.parseArgs()
+    executeTest()
